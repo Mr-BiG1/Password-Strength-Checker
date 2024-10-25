@@ -32,15 +32,15 @@ Ensure you have *Node.js* and *npm* installed on your machine.
 
 1. Clone the repository:
     bash
-    git clone 
+    `git clone https://github.com/Mr-BiG1/Password-Strength-Checker.git`
     
 2. Navigate into the project directory:
     bash
-    cd password-strength-checker
+   ` cd password-strength-checker `
     
 3. Install the necessary dependencies:
     bash
-    npm install
+   ` npm install `
     
    
 ### Running the Application
