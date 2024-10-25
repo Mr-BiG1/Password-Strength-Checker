@@ -1,0 +1,101 @@
+<section>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center">Password Strength Checker</h1>
+                <div id="result" class="mt-4">
+                    <!-- Display the password -->
+                    <input type="text" value="<%= password %>" class="form-control mb-2" readonly
+                        placeholder="Password">
+
+                    <!-- Password strength progress bar -->
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-<%= data.class %>" role="progressbar"
+                            style="width: <%= data.width %>;" aria-valuenow="<%= data.width %>" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+
+                    <!-- Display message and suggestion -->
+                    <p class="text-center font-weight-bold <%= data.class %>">
+                        <%= data.message %>
+                    </p>
+                    <% if (data.suggestion) { %>
+                        <p class="text-center text-muted">
+                            <%= data.suggestion %>
+                        </p>
+                        <% } %>
+
+                            <!-- Display password info in a card -->
+                            <div class="col-sm-6 mx-auto font-weight-bold mt-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <% if (passwordInfo.length>=8) { %>
+                                            <p class="card-text card-text text-success">Length of password: <%= passwordInfo.length %>
+                                                    characters
+                                            </p>
+                                            <% } else { %>
+                                                <p class="card-text card-text text-danger">Length of password: <%= passwordInfo.length %>
+                                                        characters
+                                                </p>
+                                                <% } %>
+
+                                                    <!-- Uppercase check -->
+                                                    <% if (passwordInfo.uppercase) { %>
+                                                        <p class="card-text text-success">Contains uppercase letters</p>
+                                                        <% } else { %>
+                                                            <p class="card-text text-danger">Does not contain uppercase
+                                                                letters</p>
+                                                            <% } %>
+
+                                                                <!-- Lowercase check -->
+                                                                <% if (passwordInfo.lowercase) { %>
+                                                                    <p class="card-text text-success">Contains lowercase
+                                                                        letters</p>
+                                                                    <% } else { %>
+                                                                        <p class="card-text text-danger">Does not
+                                                                            contain
+                                                                            lowercase
+                                                                            letters</p>
+                                                                        <% } %>
+
+                                                                            <!-- Numbers check -->
+                                                                            <% if (passwordInfo.numbers) { %>
+                                                                                <p class="card-text text-success">
+                                                                                    Contains
+                                                                                    numbers
+                                                                                </p>
+                                                                                <% } else { %>
+                                                                                    <p class="card-text text-danger">
+                                                                                        Does
+                                                                                        not
+                                                                                        contain numbers</p>
+                                                                                    <% } %>
+
+                                                                                        <!-- Special characters check -->
+                                                                                        <% if (passwordInfo.special) {
+                                                                                            %>
+                                                                                            <p
+                                                                                                class="card-text text-success">
+                                                                                                Contains special
+                                                                                                characters
+                                                                                            </p>
+                                                                                            <% } else { %>
+                                                                                                <p
+                                                                                                    class="card-text text-danger">
+                                                                                                    Does not contain
+                                                                                                    special
+                                                                                                    characters</p>
+                                                                                                <% } %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Link to try another password -->
+                            <div class="text-center mt-3">
+                                <a href="/" class="btn btn-secondary">Check Another Password</a>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center">Welcome to Password Strength Checker</h1>
+                <p class="text-center">Enter a password to check its strength</p>
+                <form id="password-form" method="post" action="/password/checkup/">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Check Strength</button>
+                </form>
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+</section>

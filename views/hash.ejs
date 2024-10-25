@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <h1 class="text-center">Password Hasher</h1>
+                <p class="text-center">Enter a password to hash</p>
+                <form id="password-form" method="post" action="/password/hash/">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" name="text" class="form-control" id="password" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hash Password</button>
+                </form>
+
+                <!-- Display hashed password if available -->
+                <% if (hash && hash.length > 0) { %>
+                    <div id="result" class="mt-4">
+                        <p class="text-center font-weight-bold">Hashed Password</p>
+                        <p class="text-center font-weight-bold"><%= hash %></p>
+                    </div>
+                <% } %>
+
+               
+            </div>
+        </div>
+    </div>
+</section>
